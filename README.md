@@ -57,3 +57,5 @@ or file where you have it.
 ```
 python customrpc.py
 ```
+## What you need to know
+When you install and launch it in Terminal, you can't close window, terminal must work in background.
