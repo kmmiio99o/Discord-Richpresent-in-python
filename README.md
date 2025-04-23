@@ -15,7 +15,7 @@ You can use:
 
 * Winget 
 ```
-Winget install python
+winget install python
 ```
 * Scoop 
 ```
@@ -47,12 +47,11 @@ sudo [your_distro_tag] python
 
 ## Start
 * To start program you must do two things (In Terminal)
-* 
 ```
 cd Downloads
 ```
 or file where you have it.
-* 
+* To start
 ```
 python customrpc.py
 ```
