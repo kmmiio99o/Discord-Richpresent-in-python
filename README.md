@@ -12,15 +12,15 @@ CustomRPC for discord!
 <details>
 <summary>Windows</summary>
 You can use:
-* Winget ```Winget install python```
-* Scoop ```scoop install python```
-* Chocolately ```choco install python```
+<br>Winget ```Winget install python```
+<br>Scoop ```scoop install python```
+<br>Chocolately ```choco install python```
 </details>
 <details>
 <summary>Linux/MacOS</summary>
 You can use:
-* Homebrew ```brew install python```
-* sudo ```sudo [your_distro_tag] python```
+<br>Homebrew ```brew install python```
+<br>sudo ```sudo [your_distro_tag] python```
 </details>
 
 ## Things you'll need too
