@@ -19,8 +19,14 @@ You can use:
 <details>
 <summary>Linux/MacOS</summary>
 You can use:
-<br>Homebrew ```brew install python```
-<br>sudo ```sudo [your_distro_tag] python```
+<br>Homebrew 
+```
+brew install python
+```
+<br>sudo 
+```
+sudo [your_distro_tag] python
+```
 </details>
 
 ## Things you'll need too
