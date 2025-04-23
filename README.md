@@ -59,3 +59,9 @@ python customrpc.py
 ```
 ## What you need to know
 When you install and launch it in Terminal, you can't close window, terminal must work in background.
+
+## Need help?
+Hop on dms with me on Discord:
+```kmmiio99o.dev```
+or
+https://discordapp.com/users/879393496627306587 (for lazy people)
