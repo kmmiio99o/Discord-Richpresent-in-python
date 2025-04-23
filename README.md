@@ -13,9 +13,18 @@ CustomRPC for discord!
 Windows
 You can use:
 
-* Winget ```Winget install python```
-* Scoop ```scoop install python```
-* Chocolately ```choco install python```
+* Winget 
+```
+Winget install python
+```
+* Scoop 
+```
+scoop install python
+```
+* Chocolately 
+```
+choco install python
+```
 
 
 inux/MacOS
@@ -38,5 +47,12 @@ sudo [your_distro_tag] python
 
 ## Start
 * To start program you must do two things (In Terminal)
-* ```cd Downloads```
-* ```python customrpc.py```
+* 
+```
+cd Downloads
+```
+or file where you have it.
+* 
+```
+python customrpc.py
+```
