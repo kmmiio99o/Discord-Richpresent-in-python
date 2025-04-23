@@ -27,7 +27,7 @@ choco install python
 ```
 
 
-inux/MacOS
+Linux/MacOS
 You can use:
 
 * Homebrew 
@@ -43,7 +43,9 @@ sudo [your_distro_tag] python
 
 ## Things you'll need too
 * You must have pypresence
-* ```pip3 install pypresence```
+```
+pip3 install pypresence
+```
 
 ## Start
 * To start program you must do two things (In Terminal)
