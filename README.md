@@ -9,25 +9,28 @@ CustomRPC for discord!
 ## Installing
 * So in the first line you're need to install python.
 * How to make it?
-<details>
-<summary>Windows</summary>
+
+Windows
 You can use:
-<br>Winget ```Winget install python```
-<br>Scoop ```scoop install python```
-<br>Chocolately ```choco install python```
-</details>
-<details>
-<summary>Linux/MacOS</summary>
+
+* Winget ```Winget install python```
+* Scoop ```scoop install python```
+* Chocolately ```choco install python```
+
+
+inux/MacOS
 You can use:
-<br>Homebrew 
+
+* Homebrew 
 ```
 brew install python
 ```
-<br>sudo 
+
+* sudo 
 ```
 sudo [your_distro_tag] python
 ```
-</details>
+
 
 ## Things you'll need too
 * You must have pypresence
