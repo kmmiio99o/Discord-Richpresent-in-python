@@ -1,30 +1,90 @@
-from pypresence import Presence
+from pypresence import Presence, InvalidID
 import time
+import json
+import os
 
-# ID of your Discord application (you can create in Discord Developer Portal)
-CLIENT_ID = 'Your_Client_ID'
-
-# RPC initialization
-RPC = Presence(CLIENT_ID)
-RPC.connect()
-
-# Data to be displayed in RPC
-RPC.update(
-    state="STATE",  # Stan
-    details="DETAILS",  # Szczegóły
-    large_image="LARGE_IMAGE_NAME",  # The name of the large image (registered in Discord Dev Portal)
-    large_text="LARGE_IMAGE_TEXT",  # Text after hovering over a large image
-    small_image="SMALL_IMAGE_NAME",  # Name of the small image (registered in Discord Dev Portal)
-    small_text="SMALL_IMAGE_TEXT",  # Text after hovering over a small image
-    start=time.time(),  # Czas rozpoczęcia (from when you started this script)
-    buttons=[{"label": "Anything", "url": "YOUR_URL"}, {"label": "Anything", "url": "YOUR_URL"}]  # Buttons
-)
-
-print("Custom RPC is working! Click Ctrl+C to stop it.")
-
-try:
+def get_user_input():
+    print("Enter Discord Rich Presence details:")
     while True:
-        time.sleep(15)  # RPC works as long as the program is running
-except KeyboardInterrupt:
-    print("\nClosing CustomRPC...")
-    RPC.close()
+        client_id = input("Discord Application ID (CLIENT_ID): ").strip()
+        if client_id:
+            break
+        print("Application ID cannot be empty!")
+
+    state = input("State (STATE): ").strip() or "No state"
+    details = input("Details (DETAILS): ").strip() or "No details"
+    large_image = input("Large image name (LARGE_IMAGE_NAME): ").strip() or "large_image"
+    large_text = input("Large image hover text (LARGE_IMAGE_TEXT): ").strip() or "Large image"
+    small_image = input("Small image name (SMALL_IMAGE_NAME): ").strip() or "small_image"
+    small_text = input("Small image hover text (SMALL_IMAGE_TEXT): ").strip() or "Small image"
+    button1_label = input("First button label (BUTTON1_LABEL): ").strip() or "Button 1"
+    button1_url = input("First button URL (BUTTON1_URL): ").strip() or "https://example.com"
+    button2_label = input("Second button label (BUTTON2_LABEL): ").strip() or "Button 2"
+    button2_url = input("Second button URL (BUTTON2_URL): ").strip() or "https://example.com"
+
+    config = {
+        "CLIENT_ID": client_id,
+        "STATE": state,
+        "DETAILS": details,
+        "LARGE_IMAGE_NAME": large_image,
+        "LARGE_IMAGE_TEXT": large_text,
+        "SMALL_IMAGE_NAME": small_image,
+        "SMALL_IMAGE_TEXT": small_text,
+        "BUTTONS": [
+            {"label": button1_label, "url": button1_url},
+            {"label": button2_label, "url": button2_url}
+        ]
+    }
+
+    with open("config.json", "w") as f:
+        json.dump(config, f, indent=4)
+
+    return config
+
+def load_config():
+    if os.path.exists("config.json"):
+        with open("config.json", "r") as f:
+            return json.load(f)
+    return None
+
+def main():
+    config = load_config()
+
+    if not config:
+        config = get_user_input()
+
+    while True:
+        try:
+            RPC = Presence(config["CLIENT_ID"])
+            RPC.connect()
+            print("Connected to Discord RPC!")
+            break
+        except InvalidID:
+            print("Error: Invalid Discord Application ID. Please check the ID.")
+            config = get_user_input()
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            return
+
+    RPC.update(
+        state=config["STATE"],
+        details=config["DETAILS"],
+        large_image=config["LARGE_IMAGE_NAME"],
+        large_text=config["LARGE_IMAGE_TEXT"],
+        small_image=config["SMALL_IMAGE_NAME"],
+        small_text=config["SMALL_IMAGE_TEXT"],
+        start=time.time(),
+        buttons=config["BUTTONS"]
+    )
+
+    print("Custom RPC is running! Press Ctrl+C to stop.")
+
+    try:
+        while True:
+            time.sleep(15)
+    except KeyboardInterrupt:
+        print("\nClosing CustomRPC...")
+        RPC.close()
+
+if __name__ == "__main__":
+    main()

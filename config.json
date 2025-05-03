@@ -1,0 +1,19 @@
+{
+    "CLIENT_ID": "Your_Client_ID",
+    "STATE": "Your_State",
+    "DETAILS": "Your_Details",
+    "LARGE_IMAGE_NAME": "large_image_name",
+    "LARGE_IMAGE_TEXT": "large_image_text",
+    "SMALL_IMAGE_NAME": "small_image_name",
+    "SMALL_IMAGE_TEXT": "small_image_text",
+    "BUTTONS": [
+        {
+            "label": "Button_1",
+            "url": "https://example1.com"
+        },
+        {
+            "label": "Button_2",
+            "url": "https://example2.com"
+        }
+    ]
+}
