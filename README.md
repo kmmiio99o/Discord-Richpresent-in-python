@@ -19,7 +19,7 @@ A simple Python script to display custom Discord Rich Presence (RPC) using the `
 ---
 
 ## Installation
-1. Clone this repository or download the `customrpc.py` file.
+1. Clone this repository.
 2. Install the required dependency:
    ```bash
    pip install pypresence
