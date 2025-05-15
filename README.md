@@ -1,33 +1,65 @@
-# Discord Rich Presence in Python
+# 🎮 Discord Rich Presence in Python
 
-A simple Python script to display custom Discord Rich Presence (RPC) using the `pypresence` library. This allows you to showcase your activity on Discord with custom details, images, and buttons.
-
----
-
-## Features
-- **Customizable Presence**: Set your own state, details, and images.
-- **Interactive Buttons**: Add up to two buttons with custom labels and URLs.
-- **Persistent Configuration**: Save your settings in `config.json` for future use.
-- **User-Friendly**: Input prompts guide you through setup.
+A simple and customizable Python script to display your own **Discord Rich Presence (RPC)** using the `pypresence` library. Show off your activity with custom details, images, and interactive buttons!
 
 ---
 
-## Prerequisites
-- Python 3.6 or higher
-- A Discord application (to get the `CLIENT_ID`)
+## ✨ Features
+- **🎨 Customizable Presence**: Set your own `state`, `details`, and images.
+- **🔘 Interactive Buttons**: Add up to two buttons with custom labels and URLs.
+- **💾 Persistent Configuration**: Save your settings in `config.json` for future use.
+- **👤 User-Friendly**: Guided input prompts make setup a breeze.
 
 ---
 
-## Installation
-1. Clone this repository.
-2. Install the required dependency:
+## 📋 Prerequisites
+Before you begin, ensure you have the following:
+
+- **🐍 Python 3.6 or higher**:
+  - **Windows**: Download from [Python's official site](https://www.python.org/downloads/windows/).
+  - **macOS**: Install via [Homebrew](https://brew.sh/) (`brew install python`) or [python.org](https://www.python.org/downloads/macos/).
+  - **Linux**:
+    - Debian/Ubuntu: `sudo apt update && sudo apt install python3`
+    - Arch Linux: `sudo pacman -S python`
+    - Fedora: `sudo dnf install python3`
+- **📱 Discord Application**: Create an app in the [Discord Developer Portal](https://discord.com/developers/applications) and copy the `CLIENT_ID`.
+- **🖥️ Discord Desktop**: Make sure Discord is running on your computer.
+
+---
+
+## 🛠️ Installation
+1. **Clone the repository**:
    ```bash
-   pip install pypresence
+   git clone https://github.com/your-repo/Discord-RichPresence-in-python.git
+   cd Discord-RichPresence-in-python
+   ```
+
+2. **Install dependencies**:
+   - Required library: `pypresence`.
+   - **Windows/macOS/Linux**:
+     ```bash
+     pip install pypresence
+     ```
+   - **Linux (alternative)**:
+     - If `pip` is not installed:
+       ```bash
+       sudo apt install python3-pip  # Debian/Ubuntu
+       sudo dnf install python3-pip  # Fedora
+       sudo pacman -S python-pip     # Arch Linux
+       ```
+     - Upgrade `pip`:
+       ```bash
+       pip install --upgrade pip
+       ```
+
+3. **Run the script**:
+   ```bash
+   python customrpc.py
    ```
 
 ---
 
-## Usage
+## 🚀 Usage
 1. **First Run**:
    - Execute the script:
      ```bash
@@ -44,7 +76,7 @@ A simple Python script to display custom Discord Rich Presence (RPC) using the `
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 The `config.json` file stores your settings. Here's an example:
 ```json
 {
@@ -68,22 +100,24 @@ The `config.json` file stores your settings. Here's an example:
 }
 ```
 
-### Notes:
+### 📌 Notes:
+- **There is error in terminal that I can't repair, but you don't need to care about it.**
 - **`CLIENT_ID`**: Obtain this from the [Discord Developer Portal](https://discord.com/developers/applications).
 - **Images**: Upload your images in the "Rich Presence" tab of your Discord application and use their names here.
 
 ---
 
-## Troubleshooting
-- **Invalid ID Error**: Ensure your `CLIENT_ID` is correct and your Discord app is properly configured.
-- **Connection Issues**: Make sure Discord is running and you're logged in.
+## 🔧 Troubleshooting
+- **❌ Invalid ID Error**: Ensure your `CLIENT_ID` is correct and your Discord app is properly configured.
+- **🔌 Connection Issues**: Make sure Discord is running and you're logged in.
 
 ---
 
-## License
+## 📜 License
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## Support
-For issues or feature requests, please [open an issue](https://github.com/your-repo/issues).
+## 💬 Support
+For issues or feature requests, please [open an issue](https://github.com/your-repo/issues).  
+Feel free to contribute or suggest improvements! 🚀
