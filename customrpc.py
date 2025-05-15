@@ -6,10 +6,14 @@ import os
 def get_user_input():
     print("Enter Discord Rich Presence details:")
     while True:
-        client_id = input("Discord Application ID (CLIENT_ID): ").strip()
-        if client_id:
-            break
-        print("Application ID cannot be empty!")
+        try:
+            client_id = input("Discord Application ID (CLIENT_ID): ").strip()
+            if client_id:
+                break
+            print("Application ID cannot be empty!")
+        except KeyboardInterrupt:
+            print("\nCancelled entry. Closing the program...")
+            exit(1)
 
     state = input("State (STATE): ").strip() or "No state"
     details = input("Details (DETAILS): ").strip() or "No details"
@@ -55,6 +59,7 @@ def main():
 
     while True:
         try:
+            print(f"Attempting to connect with CLIENT_ID: {config['CLIENT_ID']}")
             RPC = Presence(config["CLIENT_ID"])
             RPC.connect()
             print("Connected to Discord RPC!")
